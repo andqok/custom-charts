@@ -1,0 +1,30 @@
+<!doctype HTML>
+<html>
+    <head>
+    <style>
+    html, body {
+        height: 100%;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    .year {
+        font-family: Arial;
+        font-size: 8px;
+    }
+    </style>
+    </head>
+    <body>
+        <div class="container"></div>
+        <script src="../Util/util-time.js"></script>
+        <script src="../Util/util-dom.js"></script>
+        <script src="../Util/util-svg.js"></script>
+        <script src="../stats.js"></script>
+        <script src="burnup.js"></script>
+        <script>
+        const year = JSON.parse( running )
+        makeBurnupChart(year, query('.container'))
+        </script>
+    </body>
+</html>
