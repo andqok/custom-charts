@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.wrp {
+    width: 100%;
+    height: 0;
+    padding-top: 48%;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.hours {
+  font-family: Arial;
+  font-size: 4px;
+}
+</style>
+</head>
+<body>
+  <div class="controls">
+    <form id="datepick">
+      <input type="date" id="date-start">
+      <input type="date" id="date-end">
+    </form>
+  </div>
+  <div class="wrp"></div>
+  <script src="../Util/util-dom.js"></script>
+  <script src="../Util/util-time.js"></script>
+  <script src="../Util/util-svg.js"></script>
+  <script src="../Archive/Libs/suncalc.js"></script>
+  <script src="index.js"></script>
+  <script>
+
+  id('date-start').addEventListener('change', listener)
+  id('date-end').addEventListener('change', listener)
+
+  function listener(e) {
+    let date1 = id('date-start').value
+    let date2 = id('date-end').value
+    if (time.isISODate(date1) && time.isISODate(date2)) {
+      visualizeDays('rivne', date1, date2)
+    }
+  }
+  </script>
+</body>
+</html>
